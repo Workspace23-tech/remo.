@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Maharashtra Driver Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .registration-form {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Maharashtra Driver Services</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-information.html">My Information</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="registration-form">
+            <h2 class="text-center mb-4">Register for Driver Services</h2>
+            <form id="registrationForm" onsubmit="return handleRegistration(event)">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="3" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-3">
+        <div class="container text-center">
+            <p>&copy; 2025 Maharashtra Driver Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="data/excelHandler.js"></script>
+    <script>
+        function handleRegistration(event) {
+            event.preventDefault();
+            
+            const userData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                registrationDate: new Date().toISOString()
+            };
+
+            // Save to Excel
+            saveToExcel(userData);
+
+            // Redirect to user information page
+            window.location.href = 'user-information.html';
+            
+            return false;
+        }
+    </script>
+</body>
+</html> 
