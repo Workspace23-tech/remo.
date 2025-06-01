@@ -1,0 +1,54 @@
+.city-card {
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+
+.city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.qr-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Additional styles for better organization */
+.navbar {
+    box-shadow: 0 2px 4px rgba(240, 67, 67, 0.1);
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(241, 56, 56, 0.05);
+}
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.qr-button {
+    background-color: #FF8C00;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.qr-button:hover {
+    background-color: #FF6B00;
+}
+
+#qrCodeContainer {
+    display: none;
+}
+
+footer {
+    margin-top: 50px;
+} 
